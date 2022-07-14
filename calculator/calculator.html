@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <script src="calculator.js"></script>
+    <div class="container">
+        <div class="form-style">
+        <form name="myform" class="myform">
+            <div class="Calcy">
+                    My Calculator
+            </div>
+            <div>
+                   
+                    <td><input type="text" class="op" name="op"></input></td>
+            
+            </div>
+            <table>
+                
+
+                <tr>
+                    <td><input type="button" value="1" onclick="myform.op.value += '1' " ></input></td>
+                    <td><input type="button" value="2" onclick="myform.op.value += '2'" ></input></td>
+                    <td><input type="button" value="3" onclick="myform.op.value += '3'" ></input></td>
+                    <td><input type="button" value="+" onclick="myform.op.value += '+'"></input></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="4" onclick="myform.op.value += '4'" ></input></td>
+                    <td><input type="button" value="5" onclick="myform.op.value += '5'" ></input></td>
+                    <td><input type="button" value="6" onclick="myform.op.value += '6'" ></input></td>
+                    <td><input type="button" value="-" onclick="myform.op.value += '-'" ></input></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="7" onclick="myform.op.value += '7'" ></input></td>
+                    <td><input type="button" value="8" onclick="myform.op.value += '8'" ></input></td>
+                    <td><input type="button" value="9" onclick="myform.op.value += '9'" ></input></td>
+                    <td><input type="button" value="*" onclick="myform.op.value += '*'"  ></input></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="/" onclick="myform.op.value += '/'" ></input></td>
+                    <td><input type="button" value="0" onclick="myform.op.value += '0'" ></input></td>
+                    <td><input type="button" value="." onclick="myform.op.value += '.'" ></input></td>
+                    <td><input type="button" value="=" onclick="myform.op.value=mayur(myform.op.value)" ></input></td> 
+                </tr>
+
+                
+        </table>
+        <div>
+
+                <td><input type="button" name="clear" value="Clear all" onclick="myform.op.value=''" id="clear"></input></td><br>
+        </div>
+    
+    </form>
+</div>
+</div>
+</body>
+</html

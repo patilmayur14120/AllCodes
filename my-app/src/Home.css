@@ -1,0 +1,21 @@
+span.first_title {
+    margin-top: 20px;
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 24px;
+   
+  }
+  
+  span.second_title {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 24px;
+  
+  }   
+ .btn-close{
+    border: 3px;
+
+  }
+ .modal-title{
+   vertical-align:center;
+  }
