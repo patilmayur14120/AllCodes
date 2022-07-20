@@ -54,25 +54,25 @@ function parseCalculationString(s) {
     if (current != '') {
         calculation.push(parseFloat(current));
     }
-    console.log(calculation);
-    calculation=calculation.filter(feelter);
-    console.log(calculation);
+   
+    //calculation=calculation.filter(feelter);
+   
    
     return calculation;
 }
-function feelter(calc)
-{
+// function feelter(calc)
+// {
     
-        switch(calc)
-        {
-            case isNaN: return false;
+//         switch(calc)
+//         {
+//             case isNaN: return false;
     
-            default : return true;
-        }
+//             default : return true;
+//         }
     
     
     
-}
+// }
 
 
 function calculate(calc) {
@@ -99,10 +99,6 @@ function calculate(calc) {
                 }
                 findSub(calc);
             }
-            
-            
-            
-     console.log(calc);   
     
     return calc;
 }
@@ -156,86 +152,37 @@ function findSub(calc)
     }
     return calc;
 }
-function findBrac(calc)
-{
-    console.log("kjcb aji");
-    var pos1=0,pos2=0;
-    for(var i=0;i<calc.length;i++)
-    {
-        if(calc[i]=="(")
-        {
-            console.log('c');
-            pos1=i;
-            for(var t=pos1+1;t<calc.length;t++)
-            {
-                console.log("for2");
-                if(calc[t]==")")
-                {
-                    console.log(')');
-                    pos2=t;
-                    var bres= midbrac(calc,pos1,pos2);
-                    console.log(bres);
-                    t=calc.length;
-                    break;
+// function findBrac(calc)
+// {
+//     var pos1=0,pos2=0;
+//     for(var i=0;i<calc.length;i++)
+//     {
+//         if(calc[i]=="(")
+//         {
+//             pos1=i;
+//             for(var t=pos1+1;t<calc.length;t++)
+//             {
+//                 if(calc[t]==")")
+//                 {
+//                     console.log(')');
+//                     pos2=t;
+//                     var bres= midbrac(calc,pos1,pos2);
+//                     console.log(bres);
+//                     t=calc.length;
+//                     break;
                    
-                }
+//                 }
                 
-            }
-            i=calc.length;
-            break;
+//             }
+//             i=calc.length;
+//             break;
 
-        }
+//         }
 
-    }
-    return bres;
+//     }
+//     return bres;
 
-}
-
-function midadd(calc,pos)
-{
-    var mres=calc[pos-1]+calc[pos+1];
-    return midrearrange(mres,calc,pos);
-}
-
-function midsub(calc,pos)
-{
-    var mres=calc[pos-1]-calc[pos+1];
-    return midrearrange(mres,calc,pos);
-}
-
-function midmul(calc,pos)
-{
-    var mres=calc[pos-1]*calc[pos+1];
-    return midrearrange(mres,calc,pos);
-}
-
-function middiv(calc,pos)
-{
-    var mres=calc[pos-1]/calc[pos+1];
-    return midrearrange(mres,calc,pos);
-}
-function midbrac(calc,pos1,pos2)
-{
-    
-    var newcalc=[];
-    newcalc=calc.slice(pos1+1,pos2);
-    console.log(newcalc);
-    var bracres= calculate(newcalc);
-    console.log(bracres);
-    return bracrearrange(bracres,calc,pos1,pos2);
-}
-function midrearrange(mres,calc,pos)
-{
-    calc[pos-1]=mres;
-    for(var i=pos;i<calc.length;i++)
-    {
-        calc[i]=calc[i+2];
-    }
-    calc.pop();
-    calc.pop();
-    return calc;
-}
-
+// }
 function nestedFindBrac(calc)
 {
     var pos1,pos2;
@@ -286,6 +233,53 @@ function nestedFindBrac(calc)
     }
     return bres;
 }
+
+function midadd(calc,pos)
+{
+    var mres=calc[pos-1]+calc[pos+1];
+    return midrearrange(mres,calc,pos);
+}
+
+function midsub(calc,pos)
+{
+    var mres=calc[pos-1]-calc[pos+1];
+    return midrearrange(mres,calc,pos);
+}
+
+function midmul(calc,pos)
+{
+    var mres=calc[pos-1]*calc[pos+1];
+    return midrearrange(mres,calc,pos);
+}
+
+function middiv(calc,pos)
+{
+    var mres=calc[pos-1]/calc[pos+1];
+    return midrearrange(mres,calc,pos);
+}
+function midbrac(calc,pos1,pos2)
+{
+    
+    var newcalc=[];
+    newcalc=calc.slice(pos1+1,pos2);
+    console.log(newcalc);
+    var bracres= calculate(newcalc);
+    console.log(bracres);
+    return bracrearrange(bracres,calc,pos1,pos2);
+}
+function midrearrange(mres,calc,pos)
+{
+    calc[pos-1]=mres;
+    for(var i=pos;i<calc.length;i++)
+    {
+        calc[i]=calc[i+2];
+    }
+    calc.pop();
+    calc.pop();
+    return calc;
+}
+
+
 function bracrearrange(bracres,calc,pos1,pos2)
 {
     console.log(calc);
