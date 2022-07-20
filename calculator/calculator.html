@@ -48,14 +48,21 @@
                     <td><input type="button" value="/" onclick="myform.op.value += '/'" ></input></td>
                     <td><input type="button" value="0" onclick="myform.op.value += '0'" ></input></td>
                     <td><input type="button" value="." onclick="myform.op.value += '.'" ></input></td>
-                    <td><input type="button" value="=" onclick="myform.op.value=mayur(myform.op.value)" ></input></td> 
+                    <td><input type="button" value="=" onclick="myform.op.value=calculate(parseCalculationString(myform.op.value))" ></input></td> 
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="(" onclick="myform.op.value += '('" ></input></td>
+                    <td><input type="button" value=")" onclick="myform.op.value += ')'" ></input></td>
+                    <td><input type="button" value="<=" onclick="myform.op.value=deleteoneelement(myform.op.value)" ></input></td>
+                    <td><input type="button" name="clear" value="C" onclick="myform.op.value=''" ></input></td> 
                 </tr>
 
                 
         </table>
         <div>
 
-                <td><input type="button" name="clear" value="Clear all" onclick="myform.op.value=''" id="clear"></input></td><br>
+                <br>
         </div>
     
     </form>
