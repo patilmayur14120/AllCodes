@@ -1,3 +1,4 @@
+import { clear } from '@testing-library/user-event/dist/clear';
 import react ,{Component} from 'react';
 
 import { variables } from './Variables';
@@ -23,15 +24,31 @@ export class Home extends Component{
        var Password=document.getElementById("password").value;
           console.log(Username);
           console.log(Password);
-        if (Username==null || Username==""){  
-          alert("Name can't be blank");  
-          return false;  
-        }else if(Password.length<6){  
-          alert("Password must be at least 6 characters long.");  
-          return false;  
-          }  
-        }
-   
+            if (Username==null || Username==""){  
+            alert("Name can't be blank");  
+            clear();
+            return false;  
+            }else if(Password.length<6){  
+            alert("Password must be at least 6 characters long.");  
+            clear();
+            return false;  
+            }  
+            else if(Username=='mayur14120' && Password=='Mayur@123')
+            {
+                alert("Login Successfull");
+                clear();
+            }
+            else{
+                alert("Credentials invalid");
+                clear();
+            }
+        clear();
+    }
+    clear(){
+        document.getElementById("username").innerText="";
+        document.getElementById("password").innerText="";
+
+    }
    
    
     render(){

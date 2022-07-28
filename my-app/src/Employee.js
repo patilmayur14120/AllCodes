@@ -39,8 +39,10 @@ export class Employee extends Component{
     }
     sortResult(prop,asc)
     {
-        var sortedData= this.state.employeesWithoutFilter.sort(function(a,b){
+        
+        var sortedData = this.state.employeesWithoutFilter.sort(function(a,b){
             if(asc){
+               
                 return (a[prop]>b[prop])?1:((a[prop]<b[prop])?-1:0);
             }
             else{
@@ -62,7 +64,7 @@ export class Employee extends Component{
         .then(data=>{
            
             this.setState({employees:data,employeesWithoutFilter:data});
-            console.log(data);
+            
             
         });
         fetch(variables.API_URL+'department')
@@ -270,6 +272,7 @@ export class Employee extends Component{
                                 <td>{emp.EmployeeName}</td>
                                 <td>{emp.Department}</td>
                                 <td>{emp.DateOfJoining}</td>
+                                <td>{emp.PhotoFileName}</td>
                                 <td>
                                     <button type="button"
                                         className='btn btn-light mr-1'

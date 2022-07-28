@@ -12,7 +12,7 @@ function parseCalculationString(s) {
     for (var i = 0, ch; ch = s.charAt(i); i++) {
         if ('^*/+-'.indexOf(ch) > -1) {
             if (current == '' && ch == '-') {
-                calculation.push(ch);
+                current+="-";
             }
             else if(current=='')
             {
@@ -54,7 +54,7 @@ function parseCalculationString(s) {
     if (current != '') {
         calculation.push(parseFloat(current));
     }
-   
+    console.log(calculation);
     //calculation=calculation.filter(feelter);
    
    
@@ -189,17 +189,20 @@ function nestedFindBrac(calc)
     var flag=-1;
     for(var i=0;i<calc.length;i++)
     {
+        console.log("for1");
         
         if(calc[i]=='(')
         {
             pos1=i;
             for(var j=i+1;j<calc.length;j++)
             {
+                console.log("for2");
                 if(calc[j]=='(')
                 {
                     
                     for(var k=j+1;k<calc.length;k++)
                     {
+                        console.log("for3");
                         if(calc[k]==")")
                         {
                             pos1=j;
